@@ -1,26 +1,19 @@
-const modalCreate = $("#modal-create");
-const modalBackdrop = $(".backdrop-modal");
-const importantIcon = $(".icon-important");
-const cancelButton = $("#btn-cancel");
-const createButton = $("#btn-create");
-const submitButton = $("#btn-submit");
+let modalCreate;
+let modalBackdrop;
+let importantIcon;
+let cancelButton;
+let createButton;
+let submitButton;
 
 // form data
-const formTitle = $("#form-title");
-const formStatus = $("#form-status");
-const formBudget = $("#form-budget");
-const formDescription = $("#form-description");
-const formColor = $("#form-color");
-const formDate = $("#form-date");
+let formTitle;
+let formStatus;
+let formBudget;
+let formDescription;
+let formColor;
+let formDate;
 
-let inputField = [
-  formTitle,
-  formStatus,
-  formBudget,
-  formDescription,
-  // formColor, these form fields remain filled out regardless
-  // formDate,
-];
+let inputField;
 
 isModalActive = false;
 function toggleModal() {
@@ -72,6 +65,30 @@ function createTask() {
 }
 
 function init() {
+  modalCreate = $("#modal-create");
+  modalBackdrop = $(".backdrop-modal");
+  importantIcon = $(".icon-important");
+  cancelButton = $("#btn-cancel");
+  createButton = $("#btn-create");
+  submitButton = $("#btn-submit");
+
+  // form data
+  formTitle = $("#form-title");
+  formStatus = $("#form-status");
+  formBudget = $("#form-budget");
+  formDescription = $("#form-description");
+  formColor = $("#form-color");
+  formDate = $("#form-date");
+
+  inputField = [
+    formTitle,
+    formStatus,
+    formBudget,
+    formDescription,
+    // formColor, these form fields remain filled out regardless
+    // formDate,
+  ];
+
   createButton.click(toggleModal);
   modalBackdrop.click(toggleModal);
   cancelButton.click(() => {

@@ -1,8 +1,28 @@
-let modalCreate = $("#modal-create");
-let modalBackdrop = $(".backdrop-modal");
+const modalCreate = $("#modal-create");
+const modalBackdrop = $(".backdrop-modal");
+const importantIcon = $(".icon-important");
+const cancelButton = $("#btn-cancel");
+const createButton = $("#btn-create");
+
+const formTitle = $("#form-title");
+const formStatus = $("#form-status");
+const formBudget = $("#form-budget");
+const formDescription = $("#form-description");
+const formColor = $("#form-color");
+const formDate = $("#form-date");
+
+let inputField = [
+  formTitle,
+  formStatus,
+  formBudget,
+  formDescription,
+  formColor,
+  formDate,
+];
 
 isModalActive = false;
 function toggleModal() {
+  removeImportant();
   if (isModalActive) {
     modalCreate.addClass("hidden");
     modalBackdrop.addClass("hidden");
@@ -16,30 +36,38 @@ function toggleModal() {
   }
 }
 
-let formTitle = $("#form-title");
-let formStatus = $("#form-status");
-let formBudget = $("#form-budget");
-let formDescription = $("#form-description");
-let formColor = $("#form-color");
-let formDate = $("#form-date");
+let isImportant = false;
+const isImportantIcon = "fa-solid";
+const isNotImportantIcon = "fa-regular";
 
-let inputField = [
-  formTitle,
-  formStatus,
-  formBudget,
-  formDescription,
-  formColor,
-  formDate,
-];
+function setImporant() {
+  importantIcon.removeClass(isNotImportantIcon).addClass(isImportantIcon);
+  isImportant = true;
+}
+
+function removeImportant() {
+  importantIcon.removeClass(isImportantIcon).addClass(isNotImportantIcon);
+  isImportant = false;
+}
+
+function toggleImportant() {
+  if (isImportant) {
+    removeImportant();
+  } else {
+    setImporant();
+  }
+}
 
 function init() {
-  $("#btn-create").click(toggleModal);
-  $(".backdrop-modal").click(toggleModal);
+  createButton.click(toggleModal);
+  modalBackdrop.click(toggleModal);
 
-  $("#btn-cancel").click(() => {
+  cancelButton.click(() => {
     clearFormData(inputField);
     toggleModal();
   });
+
+  importantIcon.click(toggleImportant);
 }
 
 window.onload = init;

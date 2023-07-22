@@ -79,7 +79,7 @@
   transform: translate(-50%, -50%);
   width: 60%;
   min-height: 40svh;
-  background-color: rgba(119, 141, 169, 0.75);
+  background-color: rgba(232, 170, 20, 0.5);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   padding: 2rem;
@@ -140,4 +140,17 @@
   z-index: 5;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+}
+#bhome main {
+  padding: 1rem 0rem;
+}
+#bhome main div.user-panel {
+  padding: 1rem;
+  flex: 0.75;
+  height: 80svh;
+}
+#bhome main div.task-panel {
+  padding: 1rem;
+  flex: 2;
+  height: 80svh;
 }/*# sourceMappingURL=style.css.map */

@@ -136,7 +136,7 @@
   height: 100svh;
   width: 100%;
   inset: 0;
-  background-color: rgba(119, 141, 169, 0.5);
+  background-color: rgba(181, 222, 173, 0.5);
   z-index: 5;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);

@@ -1,39 +1,45 @@
-// let modalVisible = true;
-// let isImportant = false;
+let modalCreate = $("#modal-create");
+let modalBackdrop = $(".backdrop-modal");
 
-// function taskSave() {
-//   console.log("Saved");
-// }
+isModalActive = false;
+function toggleModal() {
+  if (isModalActive) {
+    modalCreate.addClass("hidden");
+    modalBackdrop.addClass("hidden");
+    clearFormData(inputField);
+    isModalActive = false;
+  } else {
+    modalCreate.removeClass("hidden");
+    modalBackdrop.removeClass("hidden");
+    clearFormData(inputField);
+    isModalActive = true;
+  }
+}
 
-// function toggleModal() {
-//   if (modalVisible) {
-//     $(".task-form").fadeOut(200);
-//     modalVisible = false;
-//   } else {
-//     $(".task-form").fadeIn(200);
-//     modalVisible = true;
-//   }
-// }
+let formTitle = $("#form-title");
+let formStatus = $("#form-status");
+let formBudget = $("#form-budget");
+let formDescription = $("#form-description");
+let formColor = $("#form-color");
+let formDate = $("#form-date");
 
-// function toggleImportant() {
-//   const importantIcon = "fa-solid";
-//   const notImportantIcon = "fa-regular";
+let inputField = [
+  formTitle,
+  formStatus,
+  formBudget,
+  formDescription,
+  formColor,
+  formDate,
+];
 
-//   if (isImportant) {
-//     $("#icon-important").addClass(notImportantIcon).removeClass(importantIcon);
-//     isImportant = false;
-//   } else {
-//     $("#icon-important").addClass(importantIcon).removeClass(notImportantIcon);
-//     isImportant = true;
-//   }
-// }
+function init() {
+  $("#btn-create").click(toggleModal);
+  $(".backdrop-modal").click(toggleModal);
 
-// function init() {
-//   console.log("Initialize");
+  $("#btn-cancel").click(() => {
+    clearFormData(inputField);
+    toggleModal();
+  });
+}
 
-//   $("#button-submit").click(taskSave);
-//   $("#icon-important").click(toggleImportant);
-//   $("#add-task").click(toggleModal);
-// }
-
-// window.onload = init;
+window.onload = init;

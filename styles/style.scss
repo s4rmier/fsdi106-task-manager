@@ -98,8 +98,10 @@
     transform: translate(-50%, -50%);
     width: 60%;
     min-height: 40svh;
+    background-color: rgba($color: #778da9, $alpha: 0.75);
+    backdrop-filter: blur(20px);
     padding: 2rem;
-    border: 1px solid rgba($color: #12263a, $alpha: 0.25);
+    z-index: 6;
     border-radius: 20px;
     div.task-form {
       font-family: var(--font-style-main);
@@ -154,5 +156,15 @@
         }
       }
     }
+  }
+
+  div.backdrop-modal {
+    position: absolute;
+    height: 100svh;
+    width: 100%;
+    inset: 0;
+    background-color: rgba($color: #778da9, $alpha: 0.5);
+    z-index: 5;
+    backdrop-filter: blur(10px);
   }
 }

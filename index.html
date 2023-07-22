@@ -31,7 +31,7 @@
       </div>
     </header>
 
-    <div id="modal-create">
+    <div id="modal-create" class="hidden">
       <div class="task-form">
         <div>
           <i class="icon-important fa-regular fa-star"></i>
@@ -39,13 +39,13 @@
 
         <div class="form-div">
           <label for="">Title</label>
-          <input type="text" />
+          <input id="form-title" type="text" />
         </div>
 
         <div class="form-div form-stack flex-row">
           <div class="form-div">
             <label for="">Status</label>
-            <select name="" id="">
+            <select name="" id="form-status">
               <option value="incomplete">Incomplete</option>
               <option value="complete">Complete</option>
             </select>
@@ -53,23 +53,23 @@
 
           <div class="form-div">
             <label for="">Budget</label>
-            <input type="number" name="" id="" />
+            <input type="number" name="" id="form-budget" />
           </div>
         </div>
 
         <div class="form-div">
           <label for="">Description</label>
-          <textarea name="" id="" cols="30" rows="3"></textarea>
+          <textarea name="" id="form-description" cols="30" rows="3"></textarea>
         </div>
 
         <div class="flex-row form-stack">
           <div class="form-div">
             <label for="">Color</label>
-            <input type="color" name="" id="" />
+            <input type="color" name="" id="form-color" />
           </div>
           <div class="form-div flex-row">
             <label for="">Start Date</label>
-            <input type="date" />
+            <input type="date" id="form-date" />
           </div>
         </div>
 
@@ -85,20 +85,12 @@
         </div>
       </div>
     </div>
+    <div class="backdrop-modal hidden"></div>
 
     <main class="container"></main>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/clearFormData.js"></script>
   </body>
 </html>
-
-<!-- <div class="container">
-      <main class="flex-row">
-        <div class="task-list">
-          <button class="button" id="add-task">Hide/Show</button>
-        </div>
-
-        
-      </main>
-    </div> -->

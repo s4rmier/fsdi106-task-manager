@@ -30,6 +30,9 @@
 * .justify {
   justify-content: center;
 }
+* .space-between {
+  justify-content: space-between;
+}
 * .container {
   margin: 0 auto;
 }
@@ -67,6 +70,9 @@
 #bhome header h1 {
   color: var(--color-main-dark);
   font-family: var(--font-style-util);
+}
+#bhome header h1 span {
+  color: var(--color-util);
 }
 #bhome header h1 i {
   margin: 0rem 1rem;
@@ -146,11 +152,50 @@
 }
 #bhome main div.user-panel {
   padding: 1rem;
-  flex: 0.75;
+  flex: 1.5;
   height: 80svh;
 }
 #bhome main div.task-panel {
   padding: 1rem;
-  flex: 2;
+  flex: 3;
   height: 80svh;
+}
+#bhome main div.task-panel div.task-card {
+  font-family: var(--font-style-main);
+  padding: 1rem 2rem;
+  width: 100%;
+  position: relative;
+  color: #12263a;
+  background-color: #efefef;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin: 1rem 0rem;
+}
+#bhome main div.task-panel div.task-card i.fa-star {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+#bhome main div.task-panel div.task-card i.delete-btn {
+  cursor: pointer;
+}
+#bhome main div.task-panel div.task-card h2 {
+  font-size: 1.75rem;
+}
+#bhome main div.task-panel div.task-card h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+#bhome main div.task-panel div.task-card p {
+  margin: 0;
+  padding: 0;
+}
+#bhome main div.task-panel div.task-card .task-description {
+  margin: 1rem 0rem;
+}
+#bhome main div.task-panel div.task-card .task-date {
+  text-align: end;
+  opacity: 0.5;
 }/*# sourceMappingURL=style.css.map */

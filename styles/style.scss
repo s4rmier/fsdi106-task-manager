@@ -42,6 +42,10 @@
     justify-content: center;
   }
 
+  .space-between {
+    justify-content: space-between;
+  }
+
   .container {
     margin: 0 auto;
   }
@@ -83,6 +87,9 @@
     border-bottom: 0.05rem solid rgba($color: #12263a, $alpha: 0.25);
     h1 {
       color: var(--color-main-dark);
+      span {
+        color: var(--color-util);
+      }
       i {
         margin: 0rem 1rem;
         font-size: 1.75rem;
@@ -172,14 +179,59 @@
     padding: 1rem 0rem;
     div.user-panel {
       padding: 1rem;
-      flex: 0.75;
+      flex: 1.5;
       height: 80svh;
     }
 
     div.task-panel {
       padding: 1rem;
-      flex: 2;
+      flex: 3;
       height: 80svh;
+      div.task-card {
+        font-family: var(--font-style-main);
+        padding: 1rem 2rem;
+        width: 100%;
+        position: relative;
+        color: #12263a;
+        background-color: #efefef;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin: 1rem 0rem;
+        i.fa-star {
+          position: absolute;
+          top: 0;
+          right: 1rem;
+          padding: 1rem;
+          font-size: 1.25rem;
+        }
+
+        i.delete-btn {
+          cursor: pointer;
+        }
+
+        h2 {
+          font-size: 1.75rem;
+        }
+
+        h3 {
+          font-size: 1rem;
+          margin: 0;
+        }
+
+        p {
+          margin: 0;
+          padding: 0;
+        }
+
+        .task-description {
+          margin: 1rem 0rem;
+        }
+
+        .task-date {
+          text-align: end;
+          opacity: 0.5;
+        }
+      }
     }
   }
 }

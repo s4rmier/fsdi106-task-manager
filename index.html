@@ -24,7 +24,7 @@
 
   <body id="bhome">
     <header class="container flex-row align">
-      <h1><i class="fa-solid fa-thumbtack"></i>Taskaroo.app</h1>
+      <h1><i class="fa-solid fa-thumbtack"></i>Task<span>aroo</span>.app</h1>
       <div class="btn-container" id="btn-create">
         <button class="button">Create Task</button>
         <i class="fa-solid fa-plus"></i>
@@ -46,8 +46,9 @@
           <div class="form-div">
             <label for="">Status</label>
             <select name="" id="form-status">
-              <option value="incomplete">Incomplete</option>
-              <option value="complete">Complete</option>
+              <option value="Incomplete">Incomplete</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Complete">Complete</option>
             </select>
           </div>
 
@@ -65,7 +66,7 @@
         <div class="flex-row form-stack">
           <div class="form-div flex-row">
             <label for="">Start Date</label>
-            <input type="date" id="form-date" />
+            <input type="datetime-local" id="form-date" />
           </div>
           <div class="form-div">
             <label for="">Color</label>
@@ -88,12 +89,15 @@
     <div class="backdrop-modal hidden"></div>
 
     <main class="container flex-row">
-      <div class="user-panel">A</div>
-      <div class="task-panel">B</div>
+      <div class="user-panel"></div>
+      <div class="task-panel"></div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="./scripts/index.js"></script>
     <script src="./scripts/clearFormData.js"></script>
+    <script src="./scripts/toggleImportant.js"></script>
+    <script src="./scripts/task.js"></script>
+    <script src="./scripts/renderElement.js"></script>
   </body>
 </html>

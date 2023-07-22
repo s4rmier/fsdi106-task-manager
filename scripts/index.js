@@ -3,7 +3,9 @@ const modalBackdrop = $(".backdrop-modal");
 const importantIcon = $(".icon-important");
 const cancelButton = $("#btn-cancel");
 const createButton = $("#btn-create");
+const submitButton = $("#btn-submit");
 
+// form data
 const formTitle = $("#form-title");
 const formStatus = $("#form-status");
 const formBudget = $("#form-budget");
@@ -16,8 +18,8 @@ let inputField = [
   formStatus,
   formBudget,
   formDescription,
-  formColor,
-  formDate,
+  // formColor, these form fields remain filled out regardless
+  // formDate,
 ];
 
 isModalActive = false;
@@ -37,37 +39,47 @@ function toggleModal() {
 }
 
 let isImportant = false;
-const isImportantIcon = "fa-solid";
-const isNotImportantIcon = "fa-regular";
-
-function setImporant() {
-  importantIcon.removeClass(isNotImportantIcon).addClass(isImportantIcon);
-  isImportant = true;
-}
-
-function removeImportant() {
-  importantIcon.removeClass(isImportantIcon).addClass(isNotImportantIcon);
-  isImportant = false;
-}
-
 function toggleImportant() {
   if (isImportant) {
     removeImportant();
+    isImportant = false;
   } else {
     setImporant();
+    isImportant = true;
   }
+}
+
+let taskArr = [];
+
+function createTask() {
+  taskArr.push(
+    new Task(
+      formTitle.val(),
+      formStatus.val(),
+      formBudget.val(),
+      formDescription.val(),
+      formDate.val(),
+      formColor.val(),
+      isImportant
+    )
+  );
+
+  $(".task-panel").html("");
+  renderElement(taskArr);
+
+  clearFormData(inputField);
+  toggleModal();
 }
 
 function init() {
   createButton.click(toggleModal);
   modalBackdrop.click(toggleModal);
-
   cancelButton.click(() => {
     clearFormData(inputField);
     toggleModal();
   });
-
   importantIcon.click(toggleImportant);
+  submitButton.click(createTask);
 }
 
 window.onload = init;

@@ -80,14 +80,7 @@ function init() {
   formColor = $("#form-color");
   formDate = $("#form-date");
 
-  inputField = [
-    formTitle,
-    formStatus,
-    formBudget,
-    formDescription,
-    // formColor, these form fields remain filled out regardless
-    // formDate,
-  ];
+  inputField = [formTitle, formStatus, formBudget, formDescription];
 
   createButton.click(toggleModal);
   modalBackdrop.click(toggleModal);

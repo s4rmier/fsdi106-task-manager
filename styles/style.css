@@ -5,11 +5,13 @@
   list-style-type: none;
   text-decoration: none;
   box-sizing: border-box;
+  scroll-behavior: smooth;
   --font-style-main: "Questrial";
   --font-style-sec: "Sen";
   --font-style-util: "Unica One";
   --color-main-dark: #12263a;
   --color-main-light: #b5dead;
+  --color-sub-dark: #2b5823;
   --color-sec-dark: #af3800;
   --color-sec-light: #778da9;
   --color-util: #e8aa14;
@@ -33,6 +35,9 @@
 * .space-between {
   justify-content: space-between;
 }
+* .space-around {
+  justify-content: space-around;
+}
 * .container {
   margin: 0 auto;
 }
@@ -43,12 +48,15 @@
   display: none;
 }
 * .button {
+  font-size: 0.85rem;
   padding: 0.35rem 1rem;
   border: none;
+  background-color: #d9d9d9;
   font-family: var(--font-style-main);
   border-radius: 7.5px;
 }
 * .button + i {
+  font-size: 0.85rem;
   padding: 0rem 0.5rem;
   padding-right: 0.75rem;
 }
@@ -148,17 +156,36 @@
           backdrop-filter: blur(10px);
 }
 #bhome main {
+  margin-top: 1rem;
   padding: 1rem 0rem;
 }
 #bhome main div.user-panel {
-  padding: 1rem;
-  flex: 1.5;
-  height: 80svh;
+  padding: 2rem;
+  flex: 1.25;
+  height: 70svh;
+  background-color: #efefef;
+  border-radius: 20px;
+  font-family: var(--font-style-main);
+}
+#bhome main div.user-panel img {
+  width: 35%;
+  border-radius: 50%;
+  border: 4px solid #12263a;
+  margin: 1rem;
+}
+#bhome main div.user-panel h2 {
+  font-size: 1rem;
+}
+#bhome main div.user-panel h3 {
+  font-family: var(--font-style-util);
+  font-size: 1rem;
+  font-weight: 800;
 }
 #bhome main div.task-panel {
-  padding: 1rem;
+  padding: 0rem 2rem;
   flex: 3;
-  height: 80svh;
+  height: 70svh;
+  overflow-y: scroll;
 }
 #bhome main div.task-panel div.task-card {
   font-family: var(--font-style-main);
@@ -175,27 +202,55 @@
   position: absolute;
   top: 0;
   right: 1rem;
-  padding: 1rem;
+  padding: 0rem 1rem;
   font-size: 1rem;
 }
 #bhome main div.task-panel div.task-card i.delete-btn {
   cursor: pointer;
 }
 #bhome main div.task-panel div.task-card h2 {
-  font-size: 1.75rem;
+  font-family: var(--font-style-sec);
+  font-size: 1.25rem;
 }
 #bhome main div.task-panel div.task-card h3 {
   font-size: 1rem;
   margin: 0;
 }
+#bhome main div.task-panel div.task-card h4.urgent-badge {
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-style-sec);
+  color: #af3800;
+  background-color: #e8aa14;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
 #bhome main div.task-panel div.task-card p {
   margin: 0;
   padding: 0;
 }
+#bhome main div.task-panel div.task-card p.task-description {
+  padding-left: 1rem;
+  border-left: 1px solid rgba(18, 38, 58, 0.5);
+}
 #bhome main div.task-panel div.task-card .task-description {
   margin: 1rem 0rem;
 }
+#bhome main div.task-panel div.task-card div.task-group {
+  margin: 1rem 0rem 1.5rem;
+  padding-right: 2rem;
+}
+#bhome main div.task-panel div.task-card div.button-set {
+  justify-content: flex-end;
+}
+#bhome main div.task-panel div.task-card div.button-set #btn-delete {
+  background-color: rgba(175, 56, 0, 0.75);
+  margin-right: 2rem;
+}
 #bhome main div.task-panel div.task-card .task-date {
-  text-align: end;
   opacity: 0.5;
 }/*# sourceMappingURL=style.css.map */

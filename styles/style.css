@@ -99,12 +99,13 @@
   transform: translate(-50%, -50%);
   width: 60%;
   min-height: 40svh;
-  background-color: rgba(232, 170, 20, 0.5);
+  background-color: #efefef;
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   padding: 2rem;
   z-index: 6;
   border-radius: 20px;
+  filter: drop-shadow(2px 2px 5px rgba(18, 38, 58, 0.3137254902));
 }
 #bhome div#modal-create div.task-form {
   font-family: var(--font-style-main);
@@ -156,10 +157,10 @@
   height: 100svh;
   width: 100%;
   inset: 0;
-  background-color: rgba(181, 222, 173, 0.5);
+  background-color: rgba(119, 141, 169, 0.5);
   z-index: 5;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
 }
 #bhome main {
   margin-top: 1rem;
@@ -212,10 +213,10 @@
   flex-wrap: wrap;
 }
 #bhome main div.user-panel div.task-summary div {
-  margin: 1rem;
+  margin: 1rem 1rem 0rem;
 }
 #bhome main div.user-panel div.task-summary div h3 {
-  padding: 1rem 0.5rem;
+  padding: 1rem 0rem;
   border: 3px solid #2b5823;
   border-radius: 50%;
   text-align: center;
@@ -252,7 +253,7 @@
   background-color: #efefef;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  margin: 1rem 0rem;
+  margin: 0rem 0rem 1rem;
 }
 #bhome main div.task-panel div.task-card i.fa-star {
   position: absolute;
@@ -304,7 +305,7 @@
   justify-content: flex-end;
 }
 #bhome main div.task-panel div.task-card div.button-set #btn-delete {
-  background-color: rgba(175, 56, 0, 0.75);
+  background-color: var(--color-bg-1);
   margin-right: 2rem;
 }
 #bhome main div.task-panel div.task-card .task-date {

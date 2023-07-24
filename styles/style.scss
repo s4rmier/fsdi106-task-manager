@@ -122,11 +122,12 @@
     transform: translate(-50%, -50%);
     width: 60%;
     min-height: 40svh;
-    background-color: rgba($color: #e8aa14, $alpha: 0.5);
+    background-color: #efefef;
     backdrop-filter: blur(20px);
     padding: 2rem;
     z-index: 6;
     border-radius: 20px;
+    filter: drop-shadow(2px 2px 5px #12263a50);
     div.task-form {
       font-family: var(--font-style-main);
 
@@ -187,9 +188,9 @@
     height: 100svh;
     width: 100%;
     inset: 0;
-    background-color: rgba($color: #b5dead, $alpha: 0.5);
+    background-color: rgba($color: #778da9, $alpha: 0.5);
     z-index: 5;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
   }
 
   main {
@@ -243,9 +244,9 @@
         margin: 1rem;
         flex-wrap: wrap;
         div {
-          margin: 1rem;
+          margin: 1rem 1rem 0rem;
           h3 {
-            padding: 1rem 0.5rem;
+            padding: 1rem 0rem;
             border: 3px solid #2b5823;
             border-radius: 50%;
             text-align: center;
@@ -289,7 +290,7 @@
         background-color: #efefef;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
-        margin: 1rem 0rem;
+        margin: 0rem 0rem 1rem;
 
         i.fa-star {
           position: absolute;
@@ -350,7 +351,7 @@
           justify-content: flex-end;
 
           #btn-delete {
-            background-color: rgba($color: #af3800, $alpha: 0.75);
+            background-color: var(--color-bg-1);
             margin-right: 2rem;
           }
         }

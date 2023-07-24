@@ -1,5 +1,5 @@
 function renderElement(elementArray) {
-  elementArray.forEach((element) => {
+  elementArray.forEach((element, index) => {
     let domElement = `
     <div class="task-card flex-col" style="border-left: 10px solid ${
       element.color
@@ -8,7 +8,7 @@ function renderElement(elementArray) {
     <h4 class="urgent-badge" style="${
       element.important ? "display: flex" : "display: none"
     }">
-      <i class="fa-solid fa-triangle-exclamation"></i> URGENT
+      <i class="fa-solid fa-triangle-exclamation"> &nbsp;</i> URGENT
     </h4>
 
     <h2 class="task-title">${element.title}</h2>
@@ -30,12 +30,12 @@ function renderElement(elementArray) {
     </div>
 
     <div class="button-set flex-row">
-      <div class="btn-container btn-delete" id="btn-delete">
+      <div class="btn-container btn-delete" id="btn-delete" data-index="${index}">
         <button class="button">Delete</button>
         <i class="fa-regular fa-trash-can"></i>
       </div>
 
-      <div class="btn-container btn-complete" id="btn-complete">
+      <div class="btn-container btn-complete" id="btn-complete" data-index="${index}">
         <button class="button">Complete</button>
         <i class="fa-solid fa-check"></i>
       </div>
@@ -48,6 +48,26 @@ function renderElement(elementArray) {
       $(".task-panel").append(domElement);
     }
   });
+}
+
+function renderTaskCount(taskArr) {
+  let completedTaskCount = 0;
+  let inProgressTaskCount = 0;
+  let incompleteTaskCount = 0;
+
+  taskArr.forEach((element) => {
+    if (element.status == "Complete") {
+      completedTaskCount++;
+    } else if (element.status == "Incomplete") {
+      incompleteTaskCount++;
+    } else {
+      inProgressTaskCount++;
+    }
+  });
+
+  $("#complete-task-count").text(completedTaskCount);
+  $("#inprogress-task-count").text(inProgressTaskCount);
+  $("#incomplete-task-count").text(incompleteTaskCount);
 }
 
 // HTML only template for styling

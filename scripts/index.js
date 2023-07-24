@@ -60,10 +60,20 @@ function createTask() {
 
   $(".task-panel").html("");
   renderElement(taskArr);
-
+  renderTaskCount(taskArr);
   clearFormData(inputField);
   toggleModal();
 }
+
+$(".task-panel").on("click", ".btn-delete", function () {
+  const indexToDelete = $(this).data("index");
+  if (indexToDelete !== undefined) {
+    taskArr.splice(indexToDelete, 1);
+  }
+  $(this).closest(".task-card").remove();
+  renderTaskCount(taskArr);
+  console.log(taskArr);
+});
 
 function init() {
   modalCreate = $("#modal-create");
@@ -91,6 +101,7 @@ function init() {
   });
   importantIcon.click(toggleImportant);
   submitButton.click(createTask);
+  renderTaskCount(taskArr);
 }
 
 window.onload = init;

@@ -23,7 +23,7 @@
   </head>
 
   <body id="bhome">
-    <header class="container flex-row align">
+    <header class="container flex-row align justify">
       <h1><i class="fa-solid fa-thumbtack"></i>Task<span>aroo</span>.app</h1>
       <div class="btn-container" id="btn-create">
         <button class="button">Create Task</button>
@@ -91,39 +91,52 @@
     <main class="container flex-row">
       <div class="user-panel flex-col align">
         <img src="./images/memoji.gif" alt="" />
-        <h2><i>Good Afternoon,</i></h2>
+        <h2><i id="user-greeting" onload="greetuser"></i></h2>
         <h3>Romnick</h3>
-      </div>
+        <div class="task-filter flex-col align justify">
+          <select id="task-filter">
+            <option value="complete">Complete</option>
+            <option value="incomplete">Incomplete</option>
+            <option value="in-progress">In Progress</option>
+          </select>
 
-      <div class="task-panel">
-        <!-- <div class="task-card flex-col" style="border-left: 10px solid #2b5823">
-          <h4 class="urgent-badge">
-            <i class="fa-solid fa-triangle-exclamation"></i> URGENT
-          </h4>
-          <h2 class="task-title">Task 1</h2>
-          <p class="task-status">Status: Incomplete</p>
-          <p class="task-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. accusamus
-            soluta inventore!
-          </p>
-          <div class="task-group flex-row space-between">
-            <p class="task-budget">Budget: $2300</p>
-            <p class="task-date">04-23-2023 T 16:59</p>
-          </div>
-
-          <div class="button-set flex-row">
-            <div class="btn-container btn-delete" id="btn-delete">
-              <button class="button">Delete</button>
-              <i class="fa-regular fa-trash-can"></i>
+          <div class="flex-row space-between">
+            <div class="btn-container" id="btn-clear-filter">
+              <button class="button">Clear</button>
+              <i class="fa-solid fa-filter-circle-xmark"></i>
             </div>
-
-            <div class="btn-container btn-complete" id="btn-complete">
-              <button class="button">Complete</button>
-              <i class="fa-solid fa-check"></i>
+            <div class="btn-container" id="btn-filter">
+              <button class="button">Filter</button>
+              <i class="fa-solid fa-filter"></i>
             </div>
           </div>
-        </div> -->
+
+          <div class="task-summary align justify flex-row">
+            <div>
+              <h3 class="complete-task-count">10</h3>
+              <p>Completed</p>
+            </div>
+            <div>
+              <h3 class="complete-task-count">3</h3>
+              <p>In Progress</p>
+            </div>
+            <div>
+              <h3 class="complete-task-count">5</h3>
+              <p>Incomplete</p>
+            </div>
+          </div>
+
+          <div class="sign-out">
+            <p>
+              Sign Out &nbsp; &nbsp;<i
+                class="fa-solid fa-right-from-bracket"
+              ></i>
+            </p>
+          </div>
+        </div>
       </div>
+
+      <div class="task-panel"></div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -132,5 +145,6 @@
     <script src="./scripts/toggleImportant.js"></script>
     <script src="./scripts/task.js"></script>
     <script src="./scripts/renderElement.js"></script>
+    <script src="./scripts/greetUser.js"></script>
   </body>
 </html>

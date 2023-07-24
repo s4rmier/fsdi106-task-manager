@@ -66,14 +66,20 @@
   cursor: pointer;
   background-color: var(--color-main-light);
 }
+* .btn-container:hover {
+  box-shadow: 1px 1px 1px #12263a;
+  transform: translate(-2px, -2px);
+}
 
 #bhome {
   padding: 2rem;
 }
 #bhome header {
   justify-content: space-between;
-  padding-bottom: 1.25rem;
-  border-bottom: 0.05rem solid rgba(18, 38, 58, 0.25);
+  padding: 1rem 2rem 1rem 1rem;
+  box-shadow: 1px 1px 20px rgba(18, 38, 58, 0.3137254902);
+  border-radius: 10px;
+  background-color: #efefef;
 }
 #bhome header h1 {
   color: var(--color-main-dark);
@@ -160,9 +166,10 @@
   padding: 1rem 0rem;
 }
 #bhome main div.user-panel {
+  position: relative;
   padding: 2rem;
   flex: 1.25;
-  height: 70svh;
+  height: 80svh;
   background-color: #efefef;
   border-radius: 20px;
   font-family: var(--font-style-main);
@@ -174,17 +181,66 @@
   margin: 1rem;
 }
 #bhome main div.user-panel h2 {
+  color: #778da9;
   font-size: 1rem;
 }
 #bhome main div.user-panel h3 {
   font-family: var(--font-style-util);
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 800;
+}
+#bhome main div.user-panel div.task-filter {
+  padding-top: 2rem;
+  border-top: 1px solid #12263a;
+  margin: 1rem;
+  margin-top: 3rem;
+  width: 100%;
+}
+#bhome main div.user-panel div.task-filter input,
+#bhome main div.user-panel div.task-filter select {
+  width: 100%;
+  border: 1px solid rgba(18, 38, 58, 0.25);
+  border-radius: 7.5px;
+  padding: 0.5rem 1rem;
+}
+#bhome main div.user-panel div.task-filter div.btn-container {
+  height: auto;
+  margin: 1rem;
+}
+#bhome main div.user-panel div.task-summary {
+  margin: 1rem;
+  flex-wrap: wrap;
+}
+#bhome main div.user-panel div.task-summary div {
+  margin: 1rem;
+}
+#bhome main div.user-panel div.task-summary div h3 {
+  padding: 1rem 0.5rem;
+  border: 3px solid #2b5823;
+  border-radius: 50%;
+  text-align: center;
+}
+#bhome main div.user-panel div.task-summary div:nth-child(2) h3 {
+  border: 3px solid #e8aa14;
+}
+#bhome main div.user-panel div.task-summary div:nth-child(3) h3 {
+  border: 3px solid #af3800;
+}
+#bhome main div.user-panel div.sign-out {
+  justify-self: flex-end;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 2rem;
+}
+#bhome main div.user-panel,
+#bhome main div.task-card {
+  filter: drop-shadow(2px 2px 5px rgba(18, 38, 58, 0.3137254902));
 }
 #bhome main div.task-panel {
   padding: 0rem 2rem;
   flex: 3;
-  height: 70svh;
+  height: 80svh;
   overflow-y: scroll;
 }
 #bhome main div.task-panel div.task-card {

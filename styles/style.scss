@@ -85,6 +85,11 @@
     cursor: pointer;
     background-color: var(--color-main-light);
   }
+
+  .btn-container:hover {
+    box-shadow: (1px 1px 1px #12263a);
+    transform: translate(-2px, -2px);
+  }
 }
 
 #bhome {
@@ -92,8 +97,11 @@
 
   header {
     justify-content: space-between;
-    padding-bottom: 1.25rem;
-    border-bottom: 0.05rem solid rgba($color: #12263a, $alpha: 0.25);
+    padding: 1rem 2rem 1rem 1rem;
+    box-shadow: (1px 1px 20px #12263a50);
+    border-radius: 10px;
+    background-color: #efefef;
+
     h1 {
       color: var(--color-main-dark);
       span {
@@ -188,9 +196,10 @@
     margin-top: 1rem;
     padding: 1rem 0rem;
     div.user-panel {
+      position: relative;
       padding: 2rem;
       flex: 1.25;
-      height: 70svh;
+      height: 80svh;
       background-color: #efefef;
       border-radius: 20px;
       font-family: var(--font-style-main);
@@ -201,19 +210,75 @@
         margin: 1rem;
       }
       h2 {
+        color: #778da9;
         font-size: 1rem;
       }
       h3 {
         font-family: var(--font-style-util);
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 800;
       }
+
+      div.task-filter {
+        padding-top: 2rem;
+        border-top: 1px solid #12263a;
+        margin: 1rem;
+        margin-top: 3rem;
+        width: 100%;
+        input,
+        select {
+          width: 100%;
+          border: 1px solid rgba($color: #12263a, $alpha: 0.25);
+          border-radius: 7.5px;
+          padding: 0.5rem 1rem;
+        }
+
+        div.btn-container {
+          height: auto;
+          margin: 1rem;
+        }
+      }
+
+      div.task-summary {
+        margin: 1rem;
+        flex-wrap: wrap;
+        div {
+          margin: 1rem;
+          h3 {
+            padding: 1rem 0.5rem;
+            border: 3px solid #2b5823;
+            border-radius: 50%;
+            text-align: center;
+          }
+        }
+
+        div:nth-child(2) h3 {
+          border: 3px solid #e8aa14;
+        }
+
+        div:nth-child(3) h3 {
+          border: 3px solid #af3800;
+        }
+      }
+
+      div.sign-out {
+        justify-self: flex-end;
+        align-self: flex-end;
+        position: absolute;
+        bottom: 0.5rem;
+        right: 2rem;
+      }
+    }
+
+    div.user-panel,
+    div.task-card {
+      filter: drop-shadow(2px 2px 5px #12263a50);
     }
 
     div.task-panel {
       padding: 0rem 2rem;
       flex: 3;
-      height: 70svh;
+      height: 80svh;
       overflow-y: scroll;
       div.task-card {
         font-family: var(--font-style-main);

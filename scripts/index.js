@@ -17,6 +17,7 @@ let inputField;
 
 isModalActive = false;
 function toggleModal() {
+  isImportant = false;
   removeImportant();
   if (isModalActive) {
     modalCreate.addClass("hidden");

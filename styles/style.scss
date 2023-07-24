@@ -103,6 +103,7 @@
     background-color: #efefef;
 
     h1 {
+      margin: 0;
       color: var(--color-main-dark);
       span {
         color: var(--color-util);
@@ -288,8 +289,7 @@
         position: relative;
         color: #12263a;
         background-color: #efefef;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
+        border-radius: 10px;
         margin: 0rem 0rem 1rem;
 
         i.fa-star {
@@ -316,7 +316,7 @@
 
         h4.urgent-badge {
           position: absolute;
-          right: 1rem;
+          right: 2rem;
           top: 0;
           padding: 0.5rem 0.75rem;
           font-size: 0.75rem;

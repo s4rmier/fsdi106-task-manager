@@ -46,17 +46,22 @@ function toggleImportant() {
 let taskArr = [];
 
 function createTask() {
-  taskArr.push(
-    new Task(
-      formTitle.val(),
-      formStatus.val(),
-      formBudget.val(),
-      formDescription.val(),
-      formDate.val(),
-      formColor.val(),
-      isImportant
-    )
-  );
+  if (formValidation(inputField)) {
+    taskArr.push(
+      new Task(
+        formTitle.val(),
+        formStatus.val(),
+        formBudget.val(),
+        formDescription.val(),
+        formDate.val(),
+        formColor.val(),
+        isImportant
+      )
+    );
+  } else {
+    alert("Enter Valid Input");
+    return;
+  }
 
   $(".task-panel").html("");
   renderElement(taskArr);
@@ -65,15 +70,15 @@ function createTask() {
   toggleModal();
 }
 
-$(".task-panel").on("click", ".btn-delete", function () {
+function deleteElement() {
   const indexToDelete = $(this).data("index");
   if (indexToDelete !== undefined) {
     taskArr.splice(indexToDelete, 1);
   }
   $(this).closest(".task-card").remove();
   renderTaskCount(taskArr);
-  console.log(taskArr);
-});
+}
+$(".task-panel").on("click", ".btn-delete", deleteElement);
 
 function init() {
   modalCreate = $("#modal-create");
@@ -91,7 +96,7 @@ function init() {
   formColor = $("#form-color");
   formDate = $("#form-date");
 
-  inputField = [formTitle, formStatus, formBudget, formDescription];
+  inputField = [formTitle, formStatus, formBudget, formDescription, formDate];
 
   createButton.click(toggleModal);
   modalBackdrop.click(toggleModal);

@@ -72,7 +72,7 @@ function createTask() {
 
     $.ajax({
       type: "POST",
-      url: "http://fsdiapi.azurewebsites.net/api/tasks/",
+      url: "https://fsdiapi.azurewebsites.net/api/tasks/",
       data: JSON.stringify(plainTask),
       contentType: "application/json",
       success: function (response) {
@@ -97,7 +97,7 @@ function createTask() {
 function getData() {
   $.ajax({
     type: "GET",
-    url: "http://fsdiapi.azurewebsites.net/api/tasks/",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks/",
     success: function (response) {
       let data = JSON.parse(response);
       filterData(data);
@@ -110,7 +110,7 @@ function getData() {
 
 function filterData(fetchedDataArray) {
   fetchedDataArray.forEach((element) => {
-    if (element.owner === "rom") {
+    if (element.owner === "rom-test2") {
       taskArr.push(element);
     }
   });

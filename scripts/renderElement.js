@@ -1,5 +1,4 @@
 function renderElement(elementArray) {
-  let taskPanel = $(".task-panel");
   elementArray.forEach((element) => {
     let domElement = `
     <div class="task-card flex-col task-id${
@@ -36,7 +35,9 @@ function renderElement(elementArray) {
         <i class="fa-regular fa-trash-can"></i>
       </div>
 
-      <div class="btn-container btn-complete">
+      <div class="btn-container btn-complete" onClick=markComplete(${
+        element.id
+      })>
         <button class="button">Complete</button>
         <i class="fa-solid fa-check"></i>
       </div>

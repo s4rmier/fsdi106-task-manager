@@ -31,7 +31,7 @@ function renderElement(elementArray) {
 
     <div class="button-set flex-row">
       <div class="btn-container btn-delete" data-taskID="
-      ${element.id}">
+      ${element.id}" onClick=deleteTask(${element.id})>
         <button class="button">Delete</button>
         <i class="fa-regular fa-trash-can"></i>
       </div>

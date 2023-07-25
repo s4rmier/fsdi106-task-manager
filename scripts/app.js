@@ -4,6 +4,7 @@ let importantIcon;
 let cancelButton;
 let createButton;
 let submitButton;
+let filterButton;
 
 // form data
 let formTitle;
@@ -110,7 +111,7 @@ function getData() {
 
 function filterData(fetchedDataArray) {
   fetchedDataArray.forEach((element) => {
-    if (element.owner === "rom") {
+    if (element.owner === "rom-test-environment2") {
       taskArr.push(element);
     }
   });
@@ -120,20 +121,33 @@ function filterData(fetchedDataArray) {
 }
 
 function deleteTask(taskId) {
-  const url = `https://fsdiapi.azurewebsites.net/api/tasks/${taskId}`;
+  // const url = `https://fsdiapi.azurewebsites.net/api/tasks/${taskId}`;
 
-  $.ajax({
-    type: "DELETE",
-    url: url,
-    success: function (response) {
-      console.log(`Task with ID ${taskId} deleted successfully.`);
-      taskArr = [];
-      getData();
-    },
-    error: function (error) {
-      console.error(`Failed to delete task with ID ${taskId}.`);
-    },
+  // $.ajax({
+  //   type: "DELETE",
+  //   url: url,
+  //   success: function (response) {
+  //     console.log(`Task with ID ${taskId} deleted successfully.`);
+  //     taskArr = [];
+  //     getData();
+  //   },
+  //   error: function (error) {
+  //     console.error(`Failed to delete task with ID ${taskId}.`);
+  //   },
+  // });
+  taskArr.forEach((element, index) => {
+    if (taskId == element.id) {
+      taskArr.splice(index, 1);
+      $(".task-panel").html("");
+      renderElement(taskArr);
+      renderTaskCount(taskArr);
+    }
   });
+}
+
+function clearFilters() {
+  $(".task-panel").html("");
+  renderElement(taskArr);
 }
 
 function init() {
@@ -143,6 +157,7 @@ function init() {
   cancelButton = $("#btn-cancel");
   createButton = $("#btn-create");
   submitButton = $("#btn-submit");
+  filterButton = $("#btn-filter");
 
   // form data
   formTitle = $("#form-title");
@@ -162,6 +177,10 @@ function init() {
   });
   importantIcon.click(toggleImportant);
   submitButton.click(createTask);
+  filterButton.click(function () {
+    filterTask(taskArr);
+  });
+  $("#btn-clear-filter").click(clearFilters);
   getData();
 }
 

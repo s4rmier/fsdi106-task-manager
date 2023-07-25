@@ -1,18 +1,7 @@
 function generateID() {
-  const setsOfNumbers = 3;
-  const numbersPerSet = 3;
   let randomID = "";
-
-  for (let i = 0; i < setsOfNumbers; i++) {
-    let set = "";
-    for (let j = 0; j < numbersPerSet; j++) {
-      set += Math.floor(Math.random() * 10);
-    }
-    randomID += set;
-    if (i < setsOfNumbers - 1) {
-      randomID += "-";
-    }
-  }
-
+  const min = 1000000000;
+  const max = 9999999999;
+  randomID = Math.floor(Math.random() * (max - min + 1)) + min;
   return randomID;
 }

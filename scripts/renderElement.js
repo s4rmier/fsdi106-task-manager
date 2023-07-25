@@ -1,4 +1,5 @@
 function renderElement(elementArray) {
+  let taskPanel = $(".task-panel");
   elementArray.forEach((element) => {
     let domElement = `
     <div class="task-card flex-col task-id${
@@ -30,8 +31,7 @@ function renderElement(elementArray) {
     </div>
 
     <div class="button-set flex-row">
-      <div class="btn-container btn-delete" data-taskID="
-      ${element.id}" onClick=deleteTask(${element.id})>
+      <div class="btn-container btn-delete" onClick=deleteTask(${element.id})>
         <button class="button">Delete</button>
         <i class="fa-regular fa-trash-can"></i>
       </div>
@@ -44,9 +44,9 @@ function renderElement(elementArray) {
   </div>`;
 
     if (element.important && element.status != "Complete") {
-      $(".task-panel").prepend(domElement);
+      taskPanel.prepend(domElement);
     } else {
-      $(".task-panel").append(domElement);
+      taskPanel.append(domElement);
     }
   });
 }

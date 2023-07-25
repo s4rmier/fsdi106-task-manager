@@ -7,5 +7,5 @@ if (getHours >= 0 && getHours <= 11) {
 } else if (getHours >= 12 && getHours <= 5) {
   userGreeting.text("Good Afternoon,");
 } else {
-  userGreeting.text("Good Evening");
+  userGreeting.text("Good Evening,");
 }

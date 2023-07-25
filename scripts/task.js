@@ -1,6 +1,6 @@
 class Task {
   constructor(title, status, budget, description, date, color, important) {
-    this.owner = "rom-test2";
+    this.owner = "rom";
     this.title = title;
     this.status = status;
     this.budget = budget;

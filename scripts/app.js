@@ -110,13 +110,30 @@ function getData() {
 
 function filterData(fetchedDataArray) {
   fetchedDataArray.forEach((element) => {
-    if (element.owner === "rom-test2") {
+    if (element.owner === "rom") {
       taskArr.push(element);
     }
   });
   console.log("filtered data:", taskArr);
   renderElement(taskArr);
   renderTaskCount(taskArr);
+}
+
+function deleteTask(taskId) {
+  const url = `https://fsdiapi.azurewebsites.net/api/tasks/${taskId}`;
+
+  $.ajax({
+    type: "DELETE",
+    url: url,
+    success: function (response) {
+      console.log(`Task with ID ${taskId} deleted successfully.`);
+      taskArr = [];
+      getData();
+    },
+    error: function (error) {
+      console.error(`Failed to delete task with ID ${taskId}.`);
+    },
+  });
 }
 
 function init() {

@@ -30,13 +30,13 @@ function renderElement(elementArray) {
     </div>
 
     <div class="button-set flex-row">
-      <div class="btn-container btn-delete" id="btn-delete" data-taskID="
+      <div class="btn-container btn-delete" data-taskID="
       ${element.id}">
         <button class="button">Delete</button>
         <i class="fa-regular fa-trash-can"></i>
       </div>
 
-      <div class="btn-container btn-complete" id="btn-complete">
+      <div class="btn-container btn-complete">
         <button class="button">Complete</button>
         <i class="fa-solid fa-check"></i>
       </div>

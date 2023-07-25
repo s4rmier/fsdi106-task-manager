@@ -304,7 +304,7 @@
 #bhome main div.task-panel div.task-card div.button-set {
   justify-content: flex-end;
 }
-#bhome main div.task-panel div.task-card div.button-set #btn-delete {
+#bhome main div.task-panel div.task-card div.button-set .btn-delete {
   background-color: var(--color-bg-1);
   margin-right: 2rem;
 }

@@ -64,6 +64,10 @@
     display: none;
   }
 
+  .invalid-input {
+    border: 2px solid #af3800;
+  }
+
   .button {
     font-size: 0.85rem;
     padding: 0.35rem 1rem;
@@ -180,6 +184,13 @@
         #btn-cancel {
           background: var(--color-bg-1);
         }
+      }
+    }
+
+    div.error-notification {
+      p {
+        text-align: center;
+        color: #af3800;
       }
     }
   }

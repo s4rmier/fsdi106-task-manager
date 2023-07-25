@@ -59,8 +59,6 @@ function createTask() {
       isImportant
     );
 
-    // taskArr.push(task);
-
     const plainTask = {
       owner: task.owner,
       title: task.title,
@@ -83,11 +81,12 @@ function createTask() {
         getData();
       },
       error: function (error) {
+        alert("Server communication failure. Reloading the page");
+        location.reload();
         console.log(error);
       },
     });
   } else {
-    alert("Enter Valid Input");
     return;
   }
 
@@ -108,17 +107,6 @@ function getData() {
     error: function (error) {
       console.log(error);
     },
-  });
-}
-
-function deleteTask(taskId) {
-  taskArr.forEach((element, index) => {
-    if (taskId == element.id) {
-      taskArr.splice(index, 1);
-      taskPanel.html("");
-      renderElement(taskArr);
-      renderTaskCount(taskArr);
-    }
   });
 }
 

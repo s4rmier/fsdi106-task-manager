@@ -47,6 +47,9 @@
 * .hidden {
   display: none;
 }
+* .invalid-input {
+  border: 2px solid #af3800;
+}
 * .button {
   font-size: 0.85rem;
   padding: 0.35rem 1rem;
@@ -152,6 +155,10 @@
 }
 #bhome div#modal-create div.task-form div.form-btn #btn-cancel {
   background: var(--color-bg-1);
+}
+#bhome div#modal-create div.error-notification p {
+  text-align: center;
+  color: #af3800;
 }
 #bhome div.backdrop-modal {
   position: absolute;

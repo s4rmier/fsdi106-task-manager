@@ -171,7 +171,7 @@
   position: relative;
   padding: 2rem;
   flex: 1.25;
-  height: 80svh;
+  min-height: 80svh;
   background-color: #efefef;
   border-radius: 20px;
   font-family: var(--font-style-main);
@@ -240,7 +240,7 @@
   filter: drop-shadow(2px 2px 5px rgba(18, 38, 58, 0.3137254902));
 }
 #bhome main div.task-panel {
-  padding: 0rem 2rem;
+  padding: 0rem 1rem 0rem 2rem;
   flex: 3;
   height: 80svh;
   overflow-y: scroll;

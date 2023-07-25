@@ -1,9 +1,9 @@
 function renderElement(elementArray) {
-  elementArray.forEach((element, index) => {
+  elementArray.forEach((element) => {
     let domElement = `
-    <div class="task-card flex-col" style="border-left: 10px solid ${
-      element.color
-    }">
+    <div class="task-card flex-col task-id${
+      element.id
+    }" style="border-left: 10px solid ${element.color}">
 
     <h4 class="urgent-badge" style="${
       element.important ? "display: flex" : "display: none"
@@ -30,12 +30,13 @@ function renderElement(elementArray) {
     </div>
 
     <div class="button-set flex-row">
-      <div class="btn-container btn-delete" id="btn-delete" data-index="${index}">
+      <div class="btn-container btn-delete" id="btn-delete" onClick=deleteTask(
+      ${element.id})>
         <button class="button">Delete</button>
         <i class="fa-regular fa-trash-can"></i>
       </div>
 
-      <div class="btn-container btn-complete" id="btn-complete" data-index="${index}">
+      <div class="btn-container btn-complete" id="btn-complete">
         <button class="button">Complete</button>
         <i class="fa-solid fa-check"></i>
       </div>

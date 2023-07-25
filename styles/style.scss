@@ -201,7 +201,7 @@
       position: relative;
       padding: 2rem;
       flex: 1.25;
-      height: 80svh;
+      min-height: 80svh;
       background-color: #efefef;
       border-radius: 20px;
       font-family: var(--font-style-main);
@@ -278,7 +278,7 @@
     }
 
     div.task-panel {
-      padding: 0rem 2rem;
+      padding: 0rem 1rem 0rem 2rem;
       flex: 3;
       height: 80svh;
       overflow-y: scroll;

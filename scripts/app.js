@@ -14,6 +14,7 @@ let formColor;
 let formDate;
 
 let inputField;
+let taskArr = [];
 
 isModalActive = false;
 function toggleModal() {
@@ -43,42 +44,80 @@ function toggleImportant() {
   }
 }
 
-let taskArr = [];
-
 function createTask() {
   if (formValidation(inputField)) {
-    taskArr.push(
-      new Task(
-        formTitle.val(),
-        formStatus.val(),
-        formBudget.val(),
-        formDescription.val(),
-        formDate.val(),
-        formColor.val(),
-        isImportant
-      )
+    let task = new Task(
+      formTitle.val(),
+      formStatus.val(),
+      formBudget.val(),
+      formDescription.val(),
+      formDate.val(),
+      formColor.val(),
+      isImportant
     );
+
+    // taskArr.push(task);
+
+    const plainTask = {
+      owner: task.owner,
+      title: task.title,
+      status: task.status,
+      budget: task.budget,
+      description: task.description,
+      date: task.date,
+      color: task.color,
+      important: task.important,
+      id: task.id,
+    };
+
+    $.ajax({
+      type: "POST",
+      url: "http://fsdiapi.azurewebsites.net/api/tasks/",
+      data: JSON.stringify(plainTask),
+      contentType: "application/json",
+      success: function (response) {
+        taskArr = [];
+        getData();
+      },
+      error: function (error) {
+        console.log(error);
+      },
+    });
   } else {
     alert("Enter Valid Input");
     return;
   }
 
   $(".task-panel").html("");
-  renderElement(taskArr);
   renderTaskCount(taskArr);
   clearFormData(inputField);
   toggleModal();
+} //end of create task
+
+function getData() {
+  $.ajax({
+    type: "GET",
+    url: "http://fsdiapi.azurewebsites.net/api/tasks/",
+    success: function (response) {
+      let data = JSON.parse(response);
+      filterData(data);
+    },
+    error: function (error) {
+      console.log(error);
+    },
+  });
 }
 
-function deleteElement() {
-  const indexToDelete = $(this).data("index");
-  if (indexToDelete !== undefined) {
-    taskArr.splice(indexToDelete, 1);
-  }
-  $(this).closest(".task-card").remove();
+function filterData(fetchedDataArray) {
+  fetchedDataArray.forEach((element) => {
+    if (element.owner === "rom") {
+      taskArr.push(element);
+    }
+  });
+  console.log("filtered data:", taskArr);
+  renderElement(taskArr);
   renderTaskCount(taskArr);
 }
-$(".task-panel").on("click", ".btn-delete", deleteElement);
 
 function init() {
   modalCreate = $("#modal-create");
@@ -106,7 +145,7 @@ function init() {
   });
   importantIcon.click(toggleImportant);
   submitButton.click(createTask);
-  renderTaskCount(taskArr);
+  getData();
 }
 
 window.onload = init;

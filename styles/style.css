@@ -356,7 +356,7 @@
     padding: 2rem;
     z-index: 20;
     border-radius: 0;
-    height: 100vh;
+    height: 100svh;
     width: 100%;
   }
   #bhome div#modal-create div.task-form {

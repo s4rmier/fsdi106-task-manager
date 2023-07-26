@@ -6,6 +6,7 @@
   text-decoration: none;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  line-height: 1.25;
   --font-style-main: "Questrial";
   --font-style-sec: "Sen";
   --font-style-util: "Unica One";
@@ -128,17 +129,20 @@
 #bhome div#modal-create div.task-form input,
 #bhome div#modal-create div.task-form textarea,
 #bhome div#modal-create div.task-form select {
+  font-family: var(--font-style-main);
   width: 100%;
   border: 1px solid rgba(18, 38, 58, 0.25);
   border-radius: 7.5px;
   padding: 0.5rem 1rem;
+  margin: 0.25rem 0rem;
 }
 #bhome div#modal-create div.task-form label {
   margin-right: 1rem;
 }
 #bhome div#modal-create div.task-form input[type=color] {
   width: 5rem;
-  padding: 0.5rem;
+  height: 2rem;
+  padding: 0.35rem;
 }
 #bhome div#modal-create div.task-form div {
   margin: 0.5rem 0rem;
@@ -317,4 +321,65 @@
 }
 #bhome main div.task-panel div.task-card .task-date {
   opacity: 0.5;
+}
+
+@media screen and (min-width: 1280px) {
+  #mobile-menu,
+  #mobile-create-task,
+  .mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 1279px) {
+  #bhome {
+    padding: 0;
+  }
+  #bhome header {
+    padding: 1.25rem 1rem;
+    border-radius: 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
+  }
+  #bhome header #btn-create {
+    display: none;
+  }
+  #bhome header #mobile-menu {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding-right: 1rem;
+  }
+  #bhome div#modal-create {
+    padding: 2rem;
+    z-index: 9;
+    border-radius: 0;
+    margin-top: 3rem;
+    height: 90svh;
+    width: 100%;
+  }
+  #bhome div.backdrop-modal {
+    z-index: -999;
+  }
+  #bhome main div.user-panel {
+    position: fixed;
+    z-index: 9;
+    inset: 0;
+    top: 4rem;
+    height: 100svh;
+  }
+  #bhome main #mobile-create-task {
+    color: var(--color-sub-dark);
+    position: fixed;
+    z-index: 1;
+    bottom: 3rem;
+    right: 1rem;
+    font-size: 2rem;
+  }
+  #bhome main div.task-panel {
+    margin-top: 3rem;
+    padding: 1rem;
+    height: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

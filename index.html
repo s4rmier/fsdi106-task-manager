@@ -9,12 +9,12 @@
       href="./images/thumbtack-solid.svg"
       type="image/x-icon"
     />
-    <link
+    <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
-    />
+    /> -->
     <script
       src="https://kit.fontawesome.com/c7dcac8717.js"
       crossorigin="anonymous"
@@ -29,6 +29,7 @@
         <button class="button">Create Task</button>
         <i class="fa-solid fa-plus"></i>
       </div>
+      <i id="mobile-menu" class="fa-solid fa-bars"></i>
     </header>
 
     <div id="modal-create" class="hidden">
@@ -97,6 +98,7 @@
     <div class="backdrop-modal hidden"></div>
 
     <main class="container flex-row">
+      <i id="mobile-create-task" class="fa-solid fa-circle-plus mobile"></i>
       <div class="user-panel flex-col align">
         <img src="./images/memoji.gif" alt="" />
         <h2><i id="user-greeting" onload="greetuser"></i></h2>
@@ -160,5 +162,6 @@
     <script src="./scripts/filterFunctions.js"></script>
     <script src="./scripts/completeTask.js"></script>
     <script src="./scripts/deleteTask.js"></script>
+    <script src="./scripts/checkScreensize.js"></script>
   </body>
 </html>

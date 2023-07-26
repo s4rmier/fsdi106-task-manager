@@ -7,6 +7,8 @@ let submitButton;
 let filterButton;
 let taskPanel;
 let clearFilterButton;
+let mobileMenuButton;
+let mobileCreateTaskButton;
 
 // form data
 let formTitle;
@@ -119,7 +121,10 @@ function init() {
   submitButton = $("#btn-submit");
   filterButton = $("#btn-filter");
   taskPanel = $(".task-panel");
+  userPanel = $(".user-panel");
   clearFilterButton = $("#btn-clear-filter");
+  mobileMenuButton = $("#mobile-menu");
+  mobileCreateTaskButton = $("#mobile-create-task");
 
   // form data
   formTitle = $("#form-title");
@@ -132,11 +137,17 @@ function init() {
   inputField = [formTitle, formStatus, formBudget, formDescription, formDate];
 
   createButton.click(toggleModal);
+  mobileCreateTaskButton.click(toggleModal);
   modalBackdrop.click(toggleModal);
+  checkScreensize();
 
   cancelButton.click(() => {
     clearFormData(inputField);
     toggleModal();
+  });
+
+  mobileMenuButton.click(function () {
+    userPanel.toggleClass("hidden");
   });
 
   importantIcon.click(toggleImportant);

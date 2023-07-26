@@ -11,6 +11,7 @@
   text-decoration: none;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  line-height: 1.25;
 
   --font-style-main: "Questrial";
   --font-style-sec: "Sen";
@@ -151,10 +152,12 @@
       input,
       textarea,
       select {
+        font-family: var(--font-style-main);
         width: 100%;
         border: 1px solid rgba($color: #12263a, $alpha: 0.25);
         border-radius: 7.5px;
         padding: 0.5rem 1rem;
+        margin: 0.25rem 0rem;
       }
 
       label {
@@ -163,7 +166,8 @@
 
       input[type="color"] {
         width: 5rem;
-        padding: 0.5rem;
+        height: 2rem;
+        padding: 0.35rem;
       }
 
       div {
@@ -370,6 +374,78 @@
         .task-date {
           opacity: 0.5;
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #mobile-menu,
+  #mobile-create-task,
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  #bhome {
+    padding: 0;
+
+    header {
+      padding: 1.25rem 1rem;
+      border-radius: 0;
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100vw;
+
+      #btn-create {
+        display: none;
+      }
+
+      #mobile-menu {
+        font-size: 1.25rem;
+        font-weight: 600;
+        padding-right: 1rem;
+      }
+    }
+
+    div#modal-create {
+      padding: 2rem;
+      z-index: 9;
+      border-radius: 0;
+      margin-top: 3rem;
+      height: 90svh;
+      width: 100%;
+    }
+
+    div.backdrop-modal {
+      z-index: -999;
+    }
+
+    main {
+      div.user-panel {
+        position: fixed;
+        z-index: 9;
+        inset: 0;
+        top: 4rem;
+        height: 100svh;
+      }
+
+      #mobile-create-task {
+        color: var(--color-sub-dark);
+        position: fixed;
+        z-index: 1;
+        bottom: 3rem;
+        right: 1rem;
+        font-size: 2rem;
+      }
+
+      div.task-panel {
+        margin-top: 3rem;
+        padding: 1rem;
+        height: 100%;
       }
     }
   }

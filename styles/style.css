@@ -354,11 +354,19 @@
   #bhome div#modal-create {
     position: fixed;
     padding: 2rem;
-    z-index: 9;
+    z-index: 20;
     border-radius: 0;
-    margin-top: 3rem;
-    height: 90svh;
+    height: 100vh;
     width: 100%;
+  }
+  #bhome div#modal-create div.task-form {
+    padding-top: 2rem;
+  }
+  #bhome div#modal-create div.task-form div.form-stack {
+    flex-direction: column;
+  }
+  #bhome div#modal-create div.task-form div.start-date {
+    flex-direction: column;
   }
   #bhome div.backdrop-modal {
     z-index: -999;

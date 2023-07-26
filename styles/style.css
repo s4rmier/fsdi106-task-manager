@@ -352,6 +352,7 @@
     padding-right: 1rem;
   }
   #bhome div#modal-create {
+    position: fixed;
     padding: 2rem;
     z-index: 9;
     border-radius: 0;

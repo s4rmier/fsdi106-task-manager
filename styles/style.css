@@ -229,7 +229,7 @@
 }
 #bhome main div.user-panel div.task-summary div h3 {
   padding: 1rem 0rem;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   border: 3px solid #2b5823;
   border-radius: 50%;
   text-align: center;

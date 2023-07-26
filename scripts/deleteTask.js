@@ -2,7 +2,7 @@ function deleteTask(taskId) {
   taskArr.forEach((element, index) => {
     if (taskId == element.id) {
       objectToDelete = element._id;
-      console.log(objectToDelete);
+      // console.log(objectToDelete);
 
       if (confirm("Are you sure you want to delete this task?")) {
         const url = `https://fsdiapi.azurewebsites.net/api/tasks/${objectToDelete}/`;
@@ -11,9 +11,9 @@ function deleteTask(taskId) {
           type: "DELETE",
           url: url,
           success: function (response) {
-            console.log(
-              `Deleting task with ID ${taskId} and object ID ${element._id}`
-            );
+            // console.log(
+            //   `Deleting task with ID ${taskId} and object ID ${element._id}`
+            // );
             taskPanel.html("");
             taskArr = [];
             getData();
